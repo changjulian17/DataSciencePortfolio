@@ -8,9 +8,11 @@
 
 ## LinearRegression_Regularisation
 ### Ames Housing Data - Regression Challenge, kaggle || Jul 2021 – Present  
-● Ames Housing data to make Python model with appropriate predictors for any Ames house sale price.  
-<<<<<<< HEAD
+● Ames Housing data to make Python model with appropriate predictors for any Ames house sale price.
 ● Develop regression model (inc. Lasso, Ridge) and optimised through GridSearchCV, K-fold CV.
-=======
-● Develop regression model (inc. Lasso, Ridge) and optimised through GridSearchCV, K-fold CV.
->>>>>>> 394ed0814c44aceeae38cee3ee6ede91a1abf690
+
+## NLP_Classifications
+### Classify posts of 2 different subbreddits
+● tokeniser: CountVectorise
+● model fitted: Naive Bayes, Random Forest, Grid Search CV
+● metrics and data visualisations: AUC, feature importance
