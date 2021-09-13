@@ -1,0 +1,10 @@
+,model,parameters,train,test,vectorizer
+0,nb,,0.6371728210099585,0.5908009516256939,TfidfVectorizer
+1,RandomForestClassifier(max_depth=20),"{'max_depth': 20, 'n_estimators': 100}",0.6823830087247731,0.591329632566746,TfidfVectorizer
+2,"AdaBoostClassifier(base_estimator=DecisionTreeClassifier(max_depth=2),
+                   n_estimators=100)","{'base_estimator__max_depth': 2, 'learning_rate': 1.0, 'n_estimators': 100}",0.6704855909050851,0.5892149088025377,TfidfVectorizer
+3,"VotingClassifier(estimators=[('tree',
+                              RandomForestClassifier(max_depth=1,
+                                                     n_estimators=50)),
+                             ('ada',
+                              AdaBoostClassifier(base_estimator=DecisionTreeClassifier()))])","{'ada__n_estimators': 50, 'tree__max_depth': 1, 'tree__n_estimators': 50, 'voting': 'hard'}",0.617872565435798,0.54903515728258,TfidfVectorizer

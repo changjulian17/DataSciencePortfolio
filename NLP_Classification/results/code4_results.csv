@@ -1,0 +1,19 @@
+,model,parameters,train,test,vectorizer
+0,DecisionTreeClassifier(),"{'max_depth': 5, 'n_estimators': 200, 'n_gram': (1, 1)}",0.690314620604565,0.5960877610362146,TfidfVectorizer
+1,DecisionTreeClassifier(),"{'max_depth': 5, 'n_estimators': 200, 'n_gram': (1, 2)}",0.6912840398343174,0.5974094633888448,TfidfVectorizer
+2,DecisionTreeClassifier(),"{'max_depth': 5, 'n_estimators': 200, 'n_gram': (1, 3)}",0.6911077817925443,0.5971451229183188,TfidfVectorizer
+3,DecisionTreeClassifier(),"{'max_depth': 5, 'n_estimators': 200, 'n_gram': (1, 4)}",0.686789459769102,0.5955590800951626,TfidfVectorizer
+4,DecisionTreeClassifier(),"{'max_depth': 5, 'n_estimators': 200, 'n_gram': (1, 5)}",0.6886401692077201,0.5979381443298969,TfidfVectorizer
+5,DecisionTreeClassifier(),"{'max_depth': 5, 'n_estimators': 200, 'n_gram': (1, 6)}",0.6875826209570811,0.5921226539783241,TfidfVectorizer
+6,DecisionTreeClassifier(),"{'max_depth': 5, 'n_estimators': 200, 'n_gram': (1, 7)}",0.6893452013748127,0.5974094633888448,TfidfVectorizer
+7,DecisionTreeClassifier(),"{'max_depth': 5, 'n_estimators': 200, 'n_gram': (1, 8)}",0.6869657178108751,0.5892149088025377,TfidfVectorizer
+8,DecisionTreeClassifier(),"{'max_depth': 5, 'n_estimators': 200, 'n_gram': (1, 9)}",0.6888164272494932,0.5945017182130584,TfidfVectorizer
+9,DecisionTreeClassifier(),"{'max_depth': 5, 'n_estimators': 200, 'n_gram': (2, 1)}",0.5740724420551687,0.5440126883425852,TfidfVectorizer
+10,DecisionTreeClassifier(),"{'max_depth': 5, 'n_estimators': 200, 'n_gram': (2, 2)}",0.5714285714285714,0.542690985989955,TfidfVectorizer
+11,DecisionTreeClassifier(),"{'max_depth': 5, 'n_estimators': 200, 'n_gram': (2, 3)}",0.5705472812197057,0.5477134549299498,TfidfVectorizer
+12,DecisionTreeClassifier(),"{'max_depth': 5, 'n_estimators': 200, 'n_gram': (2, 4)}",0.569842249052613,0.5453343906952154,TfidfVectorizer
+13,DecisionTreeClassifier(),"{'max_depth': 5, 'n_estimators': 200, 'n_gram': (2, 5)}",0.5708997973032519,0.5466560930478456,TfidfVectorizer
+14,DecisionTreeClassifier(),"{'max_depth': 5, 'n_estimators': 200, 'n_gram': (3, 1)}",0.5714285714285714,0.542690985989955,TfidfVectorizer
+15,DecisionTreeClassifier(),"{'max_depth': 5, 'n_estimators': 200, 'n_gram': (3, 2)}",0.5705472812197057,0.5477134549299498,TfidfVectorizer
+16,DecisionTreeClassifier(),"{'max_depth': 5, 'n_estimators': 200, 'n_gram': (3, 3)}",0.569842249052613,0.5453343906952154,TfidfVectorizer
+17,DecisionTreeClassifier(),"{'max_depth': 5, 'n_estimators': 200, 'n_gram': (3, 4)}",0.5708997973032519,0.5466560930478456,TfidfVectorizer
