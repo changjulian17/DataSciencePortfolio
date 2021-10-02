@@ -13,7 +13,7 @@
 - Data is extracted from the website [Reddit.com](https://www.reddit.com). Collecting the titles from the subreddits as documents.
 - Two vectorisers `CountVectorizer` and `TfidfVectorizer` are considered for the model to analyse.
 - Machine Learning Classifiers (`Naive Bayes`, `Random Forest`, `Adaboost`, `VotingClassifier`, `SVM` and `Logistic Regression`) will be considered to determine if a doc belongs to either subreddit.
-- Data will be split into ***train*** and **test** sample. Models are trained on the ***train*** sample and used to predict the ***test*** sample. The best model is determined by **accuracy** in predicting the ***test*** sample.
+- Data will be split into ***train*** and **test** sample. Models are trained on the ***train*** sample and used to predict the ***test*** sample. The best model is determined by **accuracy** in predicting the ***lowest difference in train and test scores*** this is due to the high overfitting seen in the models.
 
 
 ## Problem Statement
@@ -39,9 +39,9 @@ The model with based on trials of:
 
 The model with the best performance is: 
 - CountVectorizer(stop_words = 'english',ngram_range=(1,5),max_features=3000)  
-- Estimator: LogisticRegressionCV(cv=5,  random_state=42, max_iter=200,n_jobs=-1)
+- Estimator: RandomForestClassifier(n_estimators=200, max_depth=5)
 
-***Baseline accuracy is 0.5 and best model test score is 0.61 with 22.6% improvement.***
+***Baseline accuracy is 0.5 and best model test score is 0.60 with 20% improvement.***
 
 Objectives:
     1. Determine effectiveness of python models at NLP and classification of socially defined online communities  
@@ -152,4 +152,9 @@ Expanded code1 trials with two more models. Tokenized and vectorized with CountV
     4.1 Support Vector Machines    
     4.2 Logistic Regression 
     
-*LogReg is an effective model*
+LogReg is an effective model
+
+#### [code6.ipynb](code6.ipynb)
+Resolved overfitting with smaller sample up to 1600 datapoint. Random Forest is the best at generalising
+    
+*Random forest is chosen as the best model*
