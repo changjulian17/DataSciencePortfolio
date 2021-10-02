@@ -25,7 +25,7 @@
     
 ## Assumptions
 1. All information needed for classification resides in the title which is transformed to lower-cased words. 
-2. Lemmatising and Stemming was another stepped that was avoided during this project due to the short-lived nature of the posts, this so most of the posts will be current, the presence of past tense may be useful in classifying types of posts on each side. 
+2. Lemmatising and Stemming was another step that was avoided during this project due to the short-lived nature of the posts, this so most of the posts will be current, the presence of past tense may be useful in classifying types of posts on each side. 
 
 _Fixed Variables_
 -  vectorisers - max_features = 500, stop_words = 'english'
@@ -65,6 +65,15 @@ Using Pushshift's API, you'll collect posts from `stocks`, `StockMarket` subredd
 #### `data.csv` columns
 `title` - contains str with a phrase or sentence
 `stocks` - =1 if post is from `stocks` subreddit
+
+#### `best_model.joblib` model
+Saved model
+
+Results of multiple trails are saved in results folder:
+[`code1_results.csv`]('./results/code1_results.csv')
+[`code3_results.csv`]('./results/code1_results.csv')
+[`code4_results.csv`]('./results/code1_results.csv')
+[`code5_results.csv`]('./results/code1_results.csv')
 
 ---
 

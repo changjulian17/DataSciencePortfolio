@@ -1,11 +1,11 @@
 ,model,parameters,train,test,vectorizer
-0,nb,,0.6330307570282894,0.5921226539783241,CountVectorizer
-0,"RandomForestClassifier(max_depth=20, n_estimators=200)","{'max_depth': 20, 'n_estimators': 200}",0.6762139772627126,0.5942373777425324,CountVectorizer
-0,"AdaBoostClassifier(base_estimator=DecisionTreeClassifier(max_depth=2),
-                   learning_rate=0.9, n_estimators=100)","{'base_estimator__max_depth': 2, 'learning_rate': 0.9, 'n_estimators': 100}",0.6461619811403896,0.5921226539783241,CountVectorizer
+0,nb,,0.6244276153575202,0.6051241415742208,CountVectorizer
+0,"RandomForestClassifier(max_depth=5, n_estimators=200)","{'max_depth': 5, 'n_estimators': 200}",0.615797816132441,0.6014263074484945,CountVectorizer
+0,"AdaBoostClassifier(base_estimator=DecisionTreeClassifier(max_depth=1),
+                   learning_rate=0.9, n_estimators=200)","{'base_estimator__max_depth': 1, 'learning_rate': 0.9, 'n_estimators': 200}",0.6281261007396971,0.598256735340729,CountVectorizer
 0,"VotingClassifier(estimators=[('tree',
                               RandomForestClassifier(max_depth=5,
                                                      n_estimators=50)),
                              ('ada',
                               AdaBoostClassifier(base_estimator=DecisionTreeClassifier(),
-                                                 n_estimators=30))])","{'ada__n_estimators': 30, 'tree__max_depth': 5, 'tree__n_estimators': 50, 'voting': 'hard'}",0.8027672512558386,0.5942373777425324,CountVectorizer
+                                                 n_estimators=30))])","{'ada__n_estimators': 30, 'tree__max_depth': 5, 'tree__n_estimators': 50, 'voting': 'hard'}",0.7951743571680169,0.6008980454305335,CountVectorizer
