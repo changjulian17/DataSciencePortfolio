@@ -1,4 +1,4 @@
-
+﻿
 # ![](https://ga-dash.s3.amazonaws.com/production/assets/logo-9f88ae6c9c3871690e33280fcf557f33.png) Project 3: Web APIs & NLP
 
 
@@ -15,6 +15,7 @@
 - Machine Learning Classifiers (`Naive Bayes`, `Random Forest`, `Adaboost`, `VotingClassifier`, `SVM` and `Logistic Regression`) will be considered to determine if a doc belongs to either subreddit.
 - Data will be split into ***train*** and **test** sample. Models are trained on the ***train*** sample and used to predict the ***test*** sample. The best model is determined by **accuracy** in predicting the ***lowest difference in train and test scores*** this is due to the high overfitting seen in the models.
 
+When reviewing the code, please just review `code1.ipynb` the remainder of the notebooks are considered to be appendices.
 
 ## Problem Statement
 
@@ -30,6 +31,7 @@
 _Fixed Variables_
 -  vectorisers - max_features = 500, stop_words = 'english'
 
+
 # Conclusions 
 
 The model with based on trials of: 
@@ -37,25 +39,24 @@ The model with based on trials of:
 - Tokenizer/Vecotrizer: `CountVectorizer`, `TfidfVectorizer`  
 - Estimators: `Naive Bayes`, `Random Forest`, `Adaboost`, `VotingClassifier`, `SVM`, `Logistic Regression`
 
-The model with the best performance is: 
+After trialling some range of datapoints, ngram, estimators, number of features, the model with the best performance is: 
 - CountVectorizer(stop_words = 'english',ngram_range=(1,5),max_features=3000)  
-- Estimator: RandomForestClassifier(n_estimators=200, max_depth=5)
+- Estimator: RandomForestClassifier(random_state=42, max_depth=3, n_estimators=200,n_jobs=-1)
 
-***Baseline accuracy is 0.5 and best model test score is 0.60 with 20% improvement.***
+**Baseline accuracy is 0.5 and best model test score is 0.61 with 20% improvement.**
 
 Objectives:
     1. Determine effectiveness of python models at NLP and classification of socially defined online communities  
     2. To decide if there may be a redundancy in having subreddits
 
-***There is significant score improvement to the baseline of the model therefore the model can be useful to distinguish a subreddit however the error rate is still 39%. There appears to be a high amount of overlap in the topics and so the models find it hard to distinguish. However the content in the title may not be sufficient to prove that the groups are distinct. Other aspects such as media and length of selftext should be relevant but were not available due to the API restrictions.***
+**There is significant score improvement to the baseline of the model therefore the model can be useful to distinguish a subreddit however the error rate is still 39%. There appears to be a high amount of overlap in the topics and so the models find it hard to distinguish. However the content in the title may not be sufficient to prove that the groups are distinct. Other aspects such as media and length of selftext should be relevant but were not available due to the API restrictions.**
 
 # Recommendations
-1. EDA and project scores allude that high `max_feature` contributing to favourable scores because of the inclusion of more rare words (where `stocks` and `StockMarket` share many similar words).  Towards the end of the project, the `max_feature` hyperparameter appears to be very significant because as it was unlimited during the initial Logistic Regression fit there was an improvement in scores. Due to time constraints there was no further investigation on the relationship between `max_feature` and score. Further work may be done to try an expanded feature set against decision tree classifiers.
+1. EDA and project scores allude that high `max_feature` contributing to favourable scores because of the inclusion of more rare words (where `stocks` and `StockMarket` share many similar words).  Towards the end of the project, the `max_feature` hyperparameter appears to be very significant because as it was unlimited during the initial Logistic Regression fit there was an improvement in scores. However this lead to overfitting and the current model is still overfit. Including more information like self text or reading the images will help to provide more data to interpret the post.
 
 2. Although Stemming and Lemmatising was avoided for this analysis. It may be helpful to the model to allow for a more generalised regression. Also be able to consolidate words and reduce the need for so many features.
 
 3. Further work can be done to compare the model Accuracy, Sensitivity and Specificity against human classifications in a blind test. Trails can be performed with the model and human trained or read the same number of articles and compare the scores. Additionally the current best model trained against a large sample can be used to see how the former scores differ.
-
 ---
 
 ### Datasets
@@ -81,15 +82,14 @@ Results of multiple trails are saved in results folder:
 
 `code1` already included `GridSearch` of some models there are other models and hyperparameters are tested. `code1`,`code2`,`code3`,`code4`,`code5` iterations are based on token/vectorizer and hyperparameters are trailed. While you can review them in the folder all of their results will be reviewed in this notebook `code1`.
 
+# Appendix A
 ##### [code1.ipynb](code1.ipynb)
 Finding testing 4 models. Tokenized and vectorized with with CountVectorizer  
 - Tokenizer  
     CountVectorizer
 - Model  
-    4.1 Naive Bayes   
-    4.2 Random Forest (GridSearch)  
-    4.3 Adaboost(Decision Tree)  
-    4.4 Voting Classifier (RandomForest, AdaBoost(Decision Tree))
+    4.1 Random Forest (GridSearch)  
+    4.2 Adaboost(Decision Tree)  
     
 *Random Forest (RF) and Voting Classifier is the best but since voting classifier has the exact test score as RF then we can assume that AdaBoost has little effect (Except where VotingClassifier train score > RF train score) * 
 
@@ -153,8 +153,5 @@ Expanded code1 trials with two more models. Tokenized and vectorized with CountV
     4.2 Logistic Regression 
     
 LogReg is an effective model
-
-#### [code6.ipynb](code6.ipynb)
-Resolved overfitting with smaller sample up to 1600 datapoint. Random Forest is the best at generalising
     
 *Random forest is chosen as the best model*
