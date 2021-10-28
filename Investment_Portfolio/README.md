@@ -1,4 +1,4 @@
-﻿
+
 # NARRATIVE
 audience: Investors
 moving away from 60/40 to 80/20 portfolio
@@ -36,9 +36,9 @@ Actual tickers used:
 4. 'LBMA Gold Price' excel (1988) -  https://www.gold.org/goldhub/data/gold-prices
 5. 'Euro hedge long-vol' excel (2005) - https://www.eurekahedge.com/Indices/IndexView/Eurekahedge/640/CBOE-Eurekahedge-Long-Volatility-Hedge-Fund-Index
 
-### Date Range
-2000-9-31
-2021-9-31
+### Date Range  
+2004-12-01  
+2021-09-31
 
 c. 2005 onwards (due to long-vol limitations)
 
