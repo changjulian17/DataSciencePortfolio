@@ -1,4 +1,4 @@
-
+﻿
 # NARRATIVE
 audience: Investors
 moving away from 60/40 to 80/20 portfolio
@@ -11,7 +11,7 @@ alternative: dragon portfolio
 	 - [ ]  VaR + allocation
 2. prediction
 	 - [ ] Predict VaR (options pricing?)
-	 - [ ] NLP
+	 - [ ] ~~NLP~~
 
 # INPUTS
 a. list of historical indices / stocks
@@ -36,21 +36,26 @@ Actual tickers used:
 4. 'LBMA Gold Price' excel (1988) -  https://www.gold.org/goldhub/data/gold-prices
 5. 'Euro hedge long-vol' excel (2005) - https://www.eurekahedge.com/Indices/IndexView/Eurekahedge/640/CBOE-Eurekahedge-Long-Volatility-Hedge-Fund-Index
 
-### Date Range  
-2004-12-01  
-2021-09-31
+### Date Range
+2000-9-31
+2021-9-31
 
 c. 2005 onwards (due to long-vol limitations)
 
 
 # DEVELOPMENT STAGES
 1. Make platform for portolio construction
-    a. get the data with API
-    b. create low-risk and optimal portfolio
+    a. get the data with API (DONE)
+    b. create low-risk and optimal portfolio (DONE)
 2. Predictions
-    a. calculate future returns with Vector Auto-regression?
-    b. Forward predictions (reinforcement model)
-    (optional) Calculate MACD and RSI as an extra features
+    ~~a. calculate future returns with Vector Auto-regression?~~
+    b. Feature engineering (Calculate MACD and RSI as an extra features)
+	    i. use FinRL API to consolidate stocks and features
+	c.  Create models to reallocate portfolio daily based on closing prices
+	i. MPT
+	ii. RL PPO model
+	d. compare MPT and RL
+    
 3. dashboard with inputs from above
 
 
