@@ -2,9 +2,9 @@
 # NARRATIVE
 > audience: Investors  
 [<img align="left" alt="website" width="22px" src="https://raw.githubusercontent.com/iconic/open-iconic/master/svg/laptop.svg" />   AI allocator results website ](https://aiportolioallocator.herokuapp.com/)  
-[<img align="left" alt="medium articles" width="22px" src="https://raw.githubusercontent.com/iconic/open-iconic/master/svg/globe.svg" /> medium article]()
-[<img align="left" alt="medium articles" width="22px" src="https://raw.githubusercontent.com/iconic/open-iconic/master/svg/clipboard.svg" /> tensorboard](https://tensorboard.dev/experiment/z20zIbr6TmSQ3vqUBTpkAw/#scalars)
-[<img align="left" alt="medium articles" width="22px" src="https://raw.githubusercontent.com/iconic/open-iconic/master/svg/script.svg" />  repository](https://github.com/changjulian17/DataSciencePortfolio/tree/main/Investment_Portfolio)
+[<img align="left" alt="medium articles" width="22px" src="https://raw.githubusercontent.com/iconic/open-iconic/master/svg/globe.svg" /> medium article]()  
+[<img align="left" alt="medium articles" width="22px" src="https://raw.githubusercontent.com/iconic/open-iconic/master/svg/clipboard.svg" /> tensorboard](https://tensorboard.dev/experiment/z20zIbr6TmSQ3vqUBTpkAw/#scalars)  
+[<img align="left" alt="medium articles" width="22px" src="https://raw.githubusercontent.com/iconic/open-iconic/master/svg/script.svg" />  repository](https://github.com/changjulian17/DataSciencePortfolio/tree/main/Investment_Portfolio)  
 
 
 
@@ -88,69 +88,37 @@ Prices will be used from 2005 onwards due to the late adoption of long-vol strat
 	- PPO and stochastic policy gradient descent problems are notorious for overfitting. This is the case here for PPO. This may be because of the size of the learning rate and clipping resulting in reduced steps in the gradient. This may result in overfitting of trained states but under fitting other dimensions. Example, a solution for a trade within a day in the training set may be relevant for a month of return in the test set. A possible [solution](https://arxiv.org/abs/1907.06704) proposed is to run the training for longer.  
 
 #  Files  
-├── Procfile
-
-├── README.md
-
-├── app.py
-
-├── data
-
-│ └── processed_data.pkl
-
-├── modern_portfolio_theory
-
-│ ├── data
-
-│ │ ├── gold.xlsx
-
-│ │ └── long-vol.xlsx
-
-│ └── ticker_data.ipynb
-
-├── preprocessing.ipynb
-
-├── requirements.txt
-
-├── results
-
-│ ├── df_daily_return_14_14.csv
-
-│ ├── events.out.tfevents.1637990385.a89177fd15fc.921.1
-
-│ └── ppo_14_4.pkl
-
-├── setup.sh
-
-├── tensoboard_log
-
-│ └── ppo
-
-│ ├── ppo_14_4_tboard
-
-│ │ └── events.out.tfevents.1637990385.a89177fd15fc.921.1
-
-│ └── ppo_14_5_tboard
-
-│ └── events.out.tfevents.1638169318.ac0d747845b7.66.0
-
-├── train.ipynb
-
-└── trained_models
-
-├── df_actions_14_4.csv
-
-├── df_actions_14_5.csv
-
-├── df_daily_return_14_4.csv
-
-├── df_daily_return_14_5.csv
-
-├── ppo_14_4.pkl
-
-└── ppo_14_5.pkl
-
-
+├── Procfile  
+├── README.md  
+├── app.py  
+├── data  
+│ └── processed_data.pkl  
+├── modern_portfolio_theory  
+│ ├── data  
+│ │ ├── gold.xls  
+│ │ └── long-vol.xlsx  
+│ └── ticker_data.ipynb  
+├── preprocessing.ipynb  
+├── requirements.txt  
+├── results  
+│ ├── df_daily_return_14_14.csv  
+│ ├── events.out.tfevents.1637990385.a89177fd15fc.921.1  
+│ └── ppo_14_4.pkl  
+├── setup.sh  
+├── tensoboard_log  
+│ └── ppo  
+│ ├── ppo_14_4_tboard  
+│ │ └── events.out.tfevents.1637990385.a89177fd15fc.921.1  
+│ └── ppo_14_5_tboard  
+│ └── events.out.tfevents.1638169318.ac0d747845b7.66.0  
+├── train.ipynb  
+└── trained_models  
+├── df_actions_14_4.csv  
+├── df_actions_14_5.csv  
+├── df_daily_return_14_4.csv  
+├── df_daily_return_14_5.csv  
+├── ppo_14_4.pkl  
+└── ppo_14_5.pkl  
 
 > Written with [StackEdit](https://stackedit.io/).
 
