@@ -9,6 +9,7 @@ import plotly.graph_objs as go
 from pathlib import Path
 import streamlit as st
 
+
 def read_markdown_file(markdown_file):
     return Path(markdown_file).read_text()
 
