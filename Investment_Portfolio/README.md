@@ -1,10 +1,10 @@
 ﻿
 # NARRATIVE
 > audience: Investors  
-[AI allocator results website](https://aiportolioallocator.herokuapp.com/)  
-[medium article]()
-[tensorboard](https://tensorboard.dev/experiment/z20zIbr6TmSQ3vqUBTpkAw/#scalars)
-[repository](https://github.com/changjulian17/DataSciencePortfolio/tree/main/Investment_Portfolio)
+[<img align="left" alt="website" width="22px" src="https://raw.githubusercontent.com/iconic/open-iconic/master/svg/laptop.svg" />   AI allocator results website ](https://aiportolioallocator.herokuapp.com/)  
+[<img align="left" alt="medium articles" width="22px" src="https://raw.githubusercontent.com/iconic/open-iconic/master/svg/globe.svg" /> medium article]()
+[<img align="left" alt="medium articles" width="22px" src="https://raw.githubusercontent.com/iconic/open-iconic/master/svg/clipboard.svg" /> tensorboard](https://tensorboard.dev/experiment/z20zIbr6TmSQ3vqUBTpkAw/#scalars)
+[<img align="left" alt="medium articles" width="22px" src="https://raw.githubusercontent.com/iconic/open-iconic/master/svg/script.svg" />  repository](https://github.com/changjulian17/DataSciencePortfolio/tree/main/Investment_Portfolio)
 
 
 
@@ -75,19 +75,19 @@ Prices will be used from 2005 onwards due to the late adoption of long-vol strat
 5. ~~dashboard with inputs from above
 
 ## Challenges
-1. **Stationarity**
-	- As with most modelled time-series problems stationarity is important when the model is not designed to perform time-series regressions. States given to the agent are as stationary as possible and the agent is not given any time dimensions. This meant that I chose relative indicators such as the change in price from the previous day and avoided any nominal values such as closing price because the model will not be able to impute the daily change of prices.
-2. **Reward**
-	- Though both supervised and reinforcement learning use mapping between input and output, unlike supervised learning where feedback provided to the agent is correct set of actions for performing a task, reinforcement learning uses rewards and punishment as signals for positive and negative behaviour.
-![KD_nuggets_RLagent_flowchart](https://www.kdnuggets.com/images/reinforcement-learning-fig1-700.jpg)
-	-  The objective of agent is to get high returns. Where one option is to use daily return as the reward, it may be 'reward rich'. For this project the reward is set to the net of the daily return of the agent and the dragon portfolio.
-	- _For this project transaction fees are not taken into account for the reward or the computation of total returns_
-3. **Exploration vs Exploitation**
-	- [Discovery](https://towardsdatascience.com/intuition-exploration-vs-exploitation-c645a1d37c7a) is very important for DRL agents because it does not have any context when acting on the environment. The model did not explore the current solution until the entropy coefficient was .01 (high) and total_timesteps hit 5,120,000 (3 hours running).
-4. **Overfitting**
-	- PPO and stochastic policy gradient descent problems are notorious for overfitting. This is the case here for PPO. This may be because of the size of the learning rate and clipping resulting in reduced steps in the gradient. This may result in overfitting of trained states but under fitting other dimensions. Example, a solution for a trade within a day in the training set may be relevant for a month of return in the test set. A possible [solution](https://arxiv.org/abs/1907.06704) proposed is to run the training for longer.
+1. **Stationarity**. 
+	- As with most modelled time-series problems stationarity is important when the model is not designed to perform time-series regressions. States given to the agent are as stationary as possible and the agent is not given any time dimensions. This meant that I chose relative indicators such as the change in price from the previous day and avoided any nominal values such as closing price because the model will not be able to impute the daily change of prices.  
+2. **Reward**  
+	- Though both supervised and reinforcement learning use mapping between input and output, unlike supervised learning where feedback provided to the agent is correct set of actions for performing a task, reinforcement learning uses rewards and punishment as signals for positive and negative behaviour.  
+![KD_nuggets_RLagent_flowchart](https://www.kdnuggets.com/images/reinforcement-learning-fig1-700.jpg)   
+	-  The objective of agent is to get high returns. Where one option is to use daily return as the reward, it may be 'reward rich'. For this project the reward is set to the net of the daily return of the agent and the dragon portfolio.  
+	- _For this project transaction fees are not taken into account for the reward or the computation of total returns_  
+3. **Exploration vs Exploitation**  
+	- [Discovery](https://towardsdatascience.com/intuition-exploration-vs-exploitation-c645a1d37c7a) is very important for DRL agents because it does not have any context when acting on the environment. The model did not explore the current solution until the entropy coefficient was .01 (high) and total_timesteps hit 5,120,000 (3 hours running).  
+4. **Overfitting**  
+	- PPO and stochastic policy gradient descent problems are notorious for overfitting. This is the case here for PPO. This may be because of the size of the learning rate and clipping resulting in reduced steps in the gradient. This may result in overfitting of trained states but under fitting other dimensions. Example, a solution for a trade within a day in the training set may be relevant for a month of return in the test set. A possible [solution](https://arxiv.org/abs/1907.06704) proposed is to run the training for longer.  
 
-#  Files
+#  Files  
 ├── README.md  
 ├── data  
 │ ├── gold.xlsx  
