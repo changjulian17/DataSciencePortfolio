@@ -25,7 +25,7 @@ df_ppo5_act = pd.read_csv(url_ppo5_act)
 df_drg_ret = pd.read_csv(url_drg_ret)
 df_minv_ret = pd.read_csv(url_minv_ret)
 df_rand_ret = pd.read_csv(url_rand_ret)
-df_strat_stat = pd.read_csv(url_strat_stat)
+# df_strat_stat = pd.read_csv(url_strat_stat)
 
 def overview_chart():
     # cumulative plot
