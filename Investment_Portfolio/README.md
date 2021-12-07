@@ -1,14 +1,12 @@
 ﻿
 # NARRATIVE
 > audience: Investors  
-[<img align="left" alt="website" width="22px" src="https://raw.githubusercontent.com/iconic/open-iconic/master/svg/laptop.svg" />   AI allocator results website ](https://aiportolioallocator.herokuapp.com/)  
+[<img align="left" alt="website" width="22px" src="https://raw.githubusercontent.com/iconic/open-iconic/master/svg/laptop.svg" />   AI allocator results website ](https://ai-portfolio-allocator.herokuapp.com)  
 [<img align="left" alt="medium articles" width="22px" src="https://raw.githubusercontent.com/iconic/open-iconic/master/svg/globe.svg" /> medium article]()  
 [<img align="left" alt="medium articles" width="22px" src="https://raw.githubusercontent.com/iconic/open-iconic/master/svg/clipboard.svg" /> tensorboard](https://tensorboard.dev/experiment/z20zIbr6TmSQ3vqUBTpkAw/#scalars)  
 [<img align="left" alt="medium articles" width="22px" src="https://raw.githubusercontent.com/iconic/open-iconic/master/svg/script.svg" />  repository](https://github.com/changjulian17/DataSciencePortfolio/tree/main/Investment_Portfolio)  
 
-
-
-Background: Traditional moving away from [60/40](https://www.gsam.com/content/gsam/us/en/individual/market-insights/gsam-connect/2021/is-the-60-40-dead.html). Although there are more assets than equities and fixed income. The [dragon portfolio](https://www.artemiscm.com/artemis-dragon) strategy proposes a multi-generational investment that utilises investment into diversified assets. This portfolio uses majority of trading assets available i.e. equities, fixed income, commodities, gold, long volatility. Therefore it provides a balanced approach to diversify risk.
+Background: Traditional investors are starting moving away from [60/40](https://www.gsam.com/content/gsam/us/en/individual/market-insights/gsam-connect/2021/is-the-60-40-dead.html) equities/fixed income strategies to provide a long term return. Although there are more assets than equities and fixed income. The [dragon portfolio](https://www.artemiscm.com/artemis-dragon) strategy proposes a multi-generational investment that utilises investment into diversified assets. This portfolio uses majority of trading assets available i.e. equities, fixed income, commodities, gold, long volatility. Therefore it provides a balanced approach to diversify risk.
 
 Taking the dragon portfolios idea of diversification one step further I implemented the use of [Modern Portfolio Theory](https://medium.com/@changjulian17/modern-portfolio-theory-with-python-f33c9f517cd4) to allocate a multi-asset portfolio. It even allows for an investor to adjust their portfolio based on risk. However MPT is an aggregated metric, uses a fixed timeframe and assumes returns have a normal distribution. Ironically that layers more risk. There is still room to improve multi-asset trading.
 
@@ -119,6 +117,9 @@ Prices will be used from 2005 onwards due to the late adoption of long-vol strat
 ├── df_daily_return_14_5.csv  
 ├── ppo_14_4.pkl  
 └── ppo_14_5.pkl  
+
+> References:
+> [_Hypertuning Trials_](https://docs.google.com/spreadsheets/d/1toUbJDoz3u-xMWY5XidHJymkxXeWRiPZ0whZxIAiyvo/edit?usp=sharing)
 
 > Written with [StackEdit](https://stackedit.io/).
 
