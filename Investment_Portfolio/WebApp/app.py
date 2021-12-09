@@ -6,20 +6,19 @@ import pandas as pd
 import plotly.express as px
 import plotly.graph_objs as go
 # streaming
-from pathlib import Path
+import requests
 # plotter
 from plotter import overview_chart, strats_table, dist_returns, ppo_charts, portfolio_weights, histo_wts, returns_table
 
-def read_markdown_file(markdown_file):
-    return Path(markdown_file).read_text()
-
+# set layout
 st.set_page_config(layout = "wide")
-
+# print header
 st.header("AI Portfolio Allocator")
 
+# set left sidebar
+page = st.sidebar.selectbox('Select page',['Overview','Background','AI Models','Table of Returns']) 
 
-page = st.sidebar.selectbox('Select page',['Overview','AI Models','Table of Returns','Description']) 
-
+# set pages
 if page == 'Overview':
         st.write('Welcome to the AI portfolio allocator!')
         st.write('The AI model used is a trained by Reinforcement Learning using Proximal Policy Optimisation (PPO). Read more in the Description page')
@@ -79,7 +78,7 @@ elif page == 'Table of Returns':
         st.dataframe(df)
 
 else:
-	    ## Markdown
-	
-        intro_markdown = read_markdown_file("https://raw.githubusercontent.com/changjulian17/DataSciencePortfolio/main/Investment_Portfolio/README.md")
-        st.markdown(intro_markdown, unsafe_allow_html=True)
+        target_url = 'https://raw.githubusercontent.com/changjulian17/DataSciencePortfolio/main/Investment_Portfolio/README.md'
+
+        response = requests.get(target_url)
+        st.markdown(response.text, unsafe_allow_html=True)

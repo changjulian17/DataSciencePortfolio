@@ -133,7 +133,7 @@ def dist_returns():
     fig = px.histogram(df_rets_melt, 
                         x="Percent Return", 
                         color="portfolio",
-                        title="Percent return by portfolio",
+                        title="Histo gram of Percent return by portfolio",
                         barmode='group',
                         height=600,
                         )
