@@ -1,5 +1,7 @@
 # streaming
 import streamlit as st
+import streamlit.components.v1 as components
+import webbrowser
 # dataframe
 import pandas as pd
 # plotting
@@ -16,7 +18,15 @@ st.set_page_config(layout = "wide")
 st.header("AI Portfolio Allocator")
 
 # set left sidebar
-page = st.sidebar.selectbox('Select page',['Overview','Background','AI Models','Table of Returns']) 
+page = st.sidebar.selectbox('Select page',['Overview',
+                                                'Background',
+                                                'AI Models',
+                                                'Table of Returns',
+                                                'EDA',
+                                                'PPO Model (External Link)',
+                                                'Parameters (External Link)',
+                                                'State, Action, Reward and Policy Gradient (External Link)',
+                                                'Tensorboard (External Link)']) 
 
 # set pages
 if page == 'Overview':
@@ -77,8 +87,40 @@ elif page == 'Table of Returns':
         df = returns_table()
         st.dataframe(df)
 
-else:
-        target_url = 'https://raw.githubusercontent.com/changjulian17/DataSciencePortfolio/main/Investment_Portfolio/README.md'
+elif page == 'EDA':
+        st.header("Exploratory Data Analysis")
+        # display EDA from html
+        HtmlFile = open("eda.html", 'r', encoding='utf-8')
+        source_code = HtmlFile.read() 
+        print(source_code)
+        components.html(source_code, height = 9_900)
 
+elif page == 'PPO Model (External Link)':
+        st.header("Medium Article on PPO model (External Link)")
+        # link to article opens automatically
+        link = 'https://medium.com/@changjulian17/portfolio-allocation-reinforcement-learning-ppo-model-part-ii-56ecf76a941b'
+        webbrowser.open(link)
+
+elif page == 'Parameters (External Link)':
+        st.header("Medium Article on model parameters (External Link)")
+        # link to article open automatically
+        link = 'https://medium.com/@changjulian17/reinforcement-learning-ppo-in-an-investment-environment-c18b1bac29c4'
+        webbrowser.open(link)
+
+elif page == 'State, Action, Reward and Policy Gradient (External Link)':
+        st.header("Medium Article on model State, Action, Reward and Policy Gradient (External Link)")
+        # link to article open automatically
+        link = 'https://medium.com/@changjulian17/portfolio-allocation-reinforcement-learning-ppo-model-part-i-5cabd5aaaa93'
+        webbrowser.open(link)
+
+elif page == 'Tensorboard (External Link)':
+        st.header("Tensorboard (External Link)")
+        # link to tensorboard open automatically
+        link = 'https://tensorboard.dev/experiment/z20zIbr6TmSQ3vqUBTpkAw/#scalars'
+        webbrowser.open(link)
+
+else:
+        # display readme from github repo
+        target_url = 'https://raw.githubusercontent.com/changjulian17/DataSciencePortfolio/main/Investment_Portfolio/README.md'
         response = requests.get(target_url)
         st.markdown(response.text, unsafe_allow_html=True)

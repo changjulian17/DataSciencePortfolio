@@ -3,8 +3,8 @@
 > Medium articles:  
 [<img alt="medium articles" width="22px" src="https://raw.githubusercontent.com/iconic/open-iconic/master/svg/globe.svg" /> Assumptions](https://medium.com/@changjulian17/reinforcement-learning-ppo-in-an-investment-environment-c18b1bac29c4)  [<img alt="medium articles" width="22px" src="https://raw.githubusercontent.com/iconic/open-iconic/master/svg/globe.svg" /> Model Parameters](https://medium.com/@changjulian17/portfolio-allocation-reinforcement-learning-ppo-model-part-i-5cabd5aaaa93)  
 [<img align="left" alt="website" width="22px" src="https://raw.githubusercontent.com/iconic/open-iconic/master/svg/laptop.svg" />   AI Portfolio Allocator website ](https://ai-portfolio-allocator.herokuapp.com)  
-[<img align="left" alt="medium articles" width="22px" src="https://raw.githubusercontent.com/iconic/open-iconic/master/svg/clipboard.svg" /> tensorboard](https://tensorboard.dev/experiment/z20zIbr6TmSQ3vqUBTpkAw/#scalars)  
-[<img align="left" alt="medium articles" width="22px" src="https://raw.githubusercontent.com/iconic/open-iconic/master/svg/script.svg" />  repository](https://github.com/changjulian17/DataSciencePortfolio/tree/main/Investment_Portfolio)  
+[<img align="left" alt="medium articles" width="22px" src="https://raw.githubusercontent.com/iconic/open-iconic/master/svg/clipboard.svg" /> Tensorboard](https://tensorboard.dev/experiment/z20zIbr6TmSQ3vqUBTpkAw/#scalars)  
+[<img align="left" alt="medium articles" width="22px" src="https://raw.githubusercontent.com/iconic/open-iconic/master/svg/script.svg" />  Repository](https://github.com/changjulian17/DataSciencePortfolio/tree/main/Investment_Portfolio)  
 
 ## Background 
 
@@ -12,55 +12,27 @@ Traditional investors are starting moving away from [60/40](https://www.gsam.com
 
 To understand the Dragon portfolio better I implemented the use of [Modern Portfolio Theory](https://medium.com/@changjulian17/modern-portfolio-theory-with-python-f33c9f517cd4) with python code to allocate a multi-asset portfolio. It even allows for an investor to adjust their portfolio based on risk. However MPT is an aggregated metric, using a fixed timeframe and assumes returns have a normal distribution. Ironically that layers more risk. There is still room to improve multi-asset trading.
 
-This led me to think: “I can’t memorise, synthesise and weigh all asset performance to allocations, but a model would”. So my goal is to learn Reinforcement Learning (RL) by building a RL model that will trade and beat a benchmark.
+This led me to think: “I can’t memorise, synthesise and weigh all asset performance to allocations, but a model would”. So my goal is to learn Reinforcement Learning (RL) by building a RL model that will trade and  at the same time determine if it can beat a benchmark.
 
 ## Problem Statement
-**this project assessed the performance of Deep Reinforcement Learning (RL) in an investment environment. Model performance was compared against the Dragon portfolio** in a backtest from 2020 to 2021.
+**This project assessed the performance of Deep Reinforcement Learning (RL) in an investment environment. Model performance was compared against the Dragon portfolio** in a backtest from 2020 to 2021.
 
 ## About the Project
 ### Proposal
 In addition to the below, prepared  proposal [here](https://docs.google.com/document/d/1JTtCsagoKAtkpOO9RwbSwYwk30QeEvKvym455RIAzrU/edit?usp=sharing)
-### INPUTS
+### Inputs
 A. List of historical indices / stocks.  
 B. Dragon portfolio weights  
 
-### LIBRARIES
-1. FinrRL   
-	- [FinRL](https://finrl.readthedocs.io/en/latest/index.html) is the first open-source framework to demonstrate the great potential of applying deep reinforcement learning in quantitative finance. We help practitioners establish the development pipeline of trading strategies using deep reinforcement learning (DRL).
-
-2. Stable-baselines3
-	- [Stable Baselines3 (SB3)](https://github.com/DLR-RM/stable-baselines3)  is a set of reliable implementations of reinforcement learning algorithms in PyTorch. It is the next major version of  [Stable Baselines](https://github.com/hill-a/stable-baselines).
-
 ### Constraints
 A. Dividends not included.  
-B. Transaction fees are not accounted for in the reward or returns computation
+B. Transaction fees are not accounted for in the reward or returns computation  
 C. 5 main asset classes used   
-D. Deep Reinforcement Learning model using PPO
-	- PPO is a on-policy gradient descent algorithm
-E. Date Range  
+D. Deep Reinforcement Learning model using PPO  
+	- PPO is a on-policy gradient descent algorithm  
+E. Date Range   
 	- Prices will be used from 2005 onwards due to the late adoption of long-vol strategy.  
-	- Date Range 2004-12-01 to 2021-9-01
-
-### Data Dictionary
-`./data/processed_data.pkl`
-|Column|Description |
-|--|--|
-| date | date of record |
-| month | month of record |
-| close | day's closing price |
-| volume | day's volume trade, Commodities, Cash, Gold, Long Volatility and S&P 500 may be missing this data |
-| tic | ticker |
-| macd | MACD indicator |
-| rsi_30 | 30-Day RSI indicator |
-| cci_30 | 30-day CCI indicater |
-| dx_30 | 30-Day DX indicator |
-| close_30_sma | 30-day closing price SMA |
-| close_60_sma | 60-Day closing price SMA |
-| cov_list | covariance with other tickers |
-| return_list | list of tickers in cov_list |
-| close_delta | difference on previous day's closing price |
-| close_30_sma | difference on previous day's 30-day closing price SMA |
-| close_60_sma | difference on previous day's 60-Day closing price SMA |
+	- Date Range 2004-12-01 to 2021-9-01  
 
 ## Development Stages
 1. Make platform for portfolio construction 
@@ -82,18 +54,40 @@ E. Date Range
 
 ## Challenges
 1. **Stationarity**  
-	- As with most modelled time-series problems stationarity is important when the model is not designed to perform time-series regressions. States given to the agent are as stationary as possible and the agent is not given any time dimensions. This meant that I chose relative indicators such as the change in price from the previous day and avoided any nominal values such as closing price because the model will not be able to impute the daily change of prices.  
+	- As with most modelled time-series problems stationarity is important when the model is not designed to perform time-series regressions. Choosing stationary indicators and relative price representation is necessary.  
 2. **Reward**  
-	- Though both supervised and reinforcement learning use mapping between input and output, unlike supervised learning where feedback provided to the agent is correct set of actions for performing a task, reinforcement learning uses rewards and punishment as signals for positive and negative behaviour.  
+	- n supervised learning instructional feedback is provided to the agent, but reinforcement learning uses reward and punishment as signals for positive and negative behaviour (as a series of actions).  
 ![KD_nuggets_RLagent_flowchart](https://www.kdnuggets.com/images/reinforcement-learning-fig1-700.jpg)   
-	-  The objective of agent is to get high returns. Where one option is to use daily return as the reward, it may be 'reward rich'. For this project the reward is set to the net of the daily return of the agent and the dragon portfolio.  
+	-  For this project the reward is set to the net of the daily return of the agent and the dragon portfolio.  
 	- _For this project transaction fees are not taken into account for the reward or the computation of total returns_  
 3. **Exploration vs Exploitation**  
-	- [Discovery](https://towardsdatascience.com/intuition-exploration-vs-exploitation-c645a1d37c7a) is very important for DRL agents because it does not have any context when acting on the environment. The model did not explore the current solution until the entropy coefficient was .01 (high) and total_timesteps hit 5,120,000 (3 hours running).  
+	- [Exploration](https://towardsdatascience.com/intuition-exploration-vs-exploitation-c645a1d37c7a) 1.  is very important for DRL agents because it does not have any context when acting on the environment. The model did not explore the current solution until the entropy coefficient was .01 (high) and total_timesteps was 10,240,000 (7 hours running). [Tensorboard](https://tensorboard.dev/experiment/z20zIbr6TmSQ3vqUBTpkAw/#scalars) is online here. After sufficient exploration then we can exploit the experience during the prediction phase.  
 4. **Overfitting**  
-	- PPO and stochastic policy gradient descent problems are notorious for overfitting. This is the case here for PPO. This may be because of the size of the learning rate and clipping resulting in reduced steps in the gradient. This may result in overfitting of trained states but under fitting other dimensions. Example, a solution for a trade within a day in the training set may be relevant for a month of return in the test set. A possible [solution](https://arxiv.org/abs/1907.06704) proposed is to run the training for longer.  
+	- PPO and stochastic policy gradient descent problems are notorious for overfitting. This is the case here where the model had exceptional returns in the training period but disproportionately less in the test environment. This may be because of the size of the learning rate and clipping ratio resulting in reduced iterative steps in the gradient. This would result in fitted weights of trained states but under fitting unseen dimensions and states. For example, a solution for a trade within a day in the training set may be relevant for a full month of return in the test set. A possible [solution](https://arxiv.org/abs/1907.06704) proposed is to run the training for longer.  
 
-##  Files  
+## Data References
+### Data Dictionary
+`./data/processed_data.pkl`
+|Column|Description |
+|--|--|
+| date | date of record |
+| month | month of record |
+| close | day's closing price |
+| volume | day's volume trade, Commodities, Cash, Gold, Long Volatility and S&P 500 may be missing this data |
+| tic | ticker |
+| macd | MACD indicator |
+| rsi_30 | 30-Day RSI indicator |
+| cci_30 | 30-day CCI indicater |
+| dx_30 | 30-Day DX indicator |
+| close_30_sma | 30-day closing price SMA |
+| close_60_sma | 60-Day closing price SMA |
+| cov_list | covariance with other tickers |
+| return_list | list of tickers in cov_list |
+| close_delta | difference on previous day's closing price |
+| close_30_sma | difference on previous day's 30-day closing price SMA |
+| close_60_sma | difference on previous day's 60-Day closing price SMA |
+
+###  Files  
 .  
 ├── README.md  
 ├── data  
