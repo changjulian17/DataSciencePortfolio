@@ -2,6 +2,8 @@
 import streamlit as st
 import streamlit.components.v1 as components
 import webbrowser
+import platform
+platform.system()
 # dataframe
 import pandas as pd
 # plotting
@@ -96,28 +98,32 @@ elif page == 'EDA':
         components.html(source_code, height = 9_900)
 
 elif page == 'PPO Model (External Link)':
-        st.header("Medium Article on PPO model (External Link)")
+        st.header("PPO Model write up")
         # link to article opens automatically
-        link = 'https://medium.com/@changjulian17/portfolio-allocation-reinforcement-learning-ppo-model-part-ii-56ecf76a941b'
-        webbrowser.open(link)
+        link1 = 'https://medium.com/@changjulian17/portfolio-allocation-reinforcement-learning-ppo-model-part-ii-56ecf76a941b'
+        webbrowser.open(link1)
+        st.markdown(f'[Medium Article on PPO model]({link1})')
 
 elif page == 'Parameters (External Link)':
-        st.header("Medium Article on model parameters (External Link)")
+        st.header("Model parameters")
         # link to article open automatically
-        link = 'https://medium.com/@changjulian17/reinforcement-learning-ppo-in-an-investment-environment-c18b1bac29c4'
-        webbrowser.open(link)
+        link2 = 'https://medium.com/@changjulian17/reinforcement-learning-ppo-in-an-investment-environment-c18b1bac29c4'
+        webbrowser.open(link2)
+        st.markdown(f'[Medium Article on model parameters]({link2})')
 
 elif page == 'State, Action, Reward and Policy Gradient (External Link)':
-        st.header("Medium Article on model State, Action, Reward and Policy Gradient (External Link)")
+        st.header("Medium Article on model State, Action, Reward and Policy Gradient")
         # link to article open automatically
-        link = 'https://medium.com/@changjulian17/portfolio-allocation-reinforcement-learning-ppo-model-part-i-5cabd5aaaa93'
-        webbrowser.open(link)
+        link3 = 'https://medium.com/@changjulian17/portfolio-allocation-reinforcement-learning-ppo-model-part-i-5cabd5aaaa93'
+        webbrowser.open(link3)
+        st.markdown(f'[Medium Article on State, Action, Reward and Policy Gradient]({link3})')
 
 elif page == 'Tensorboard (External Link)':
-        st.header("Tensorboard (External Link)")
+        st.header("Tensorboard")
         # link to tensorboard open automatically
-        link = 'https://tensorboard.dev/experiment/z20zIbr6TmSQ3vqUBTpkAw/#scalars'
-        webbrowser.open(link)
+        link4 = 'https://tensorboard.dev/experiment/z20zIbr6TmSQ3vqUBTpkAw/#scalars'
+        webbrowser.open(link4)
+        st.markdown(f'[Tensorboard]({link3})')
 
 else:
         # display readme from github repo
