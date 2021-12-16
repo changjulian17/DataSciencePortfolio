@@ -123,7 +123,7 @@ elif page == 'Tensorboard (External Link)':
         # link to tensorboard open automatically
         link4 = 'https://tensorboard.dev/experiment/z20zIbr6TmSQ3vqUBTpkAw/#scalars'
         webbrowser.open(link4)
-        st.markdown(f'[Tensorboard]({link3})')
+        st.markdown(f'[Tensorboard]({link4})')
 
 else:
         # display readme from github repo

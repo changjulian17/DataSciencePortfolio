@@ -1,10 +1,9 @@
 ﻿
 # AI Portfolio Allocator
-> Medium articles:  
-[<img alt="medium articles" width="22px" src="https://raw.githubusercontent.com/iconic/open-iconic/master/svg/globe.svg" /> Assumptions](https://medium.com/@changjulian17/reinforcement-learning-ppo-in-an-investment-environment-c18b1bac29c4)  [<img alt="medium articles" width="22px" src="https://raw.githubusercontent.com/iconic/open-iconic/master/svg/globe.svg" /> Model Parameters](https://medium.com/@changjulian17/portfolio-allocation-reinforcement-learning-ppo-model-part-i-5cabd5aaaa93)  
+> Medium articles:  [<img alt="medium articles" width="22px" src="https://raw.githubusercontent.com/iconic/open-iconic/master/svg/globe.svg" /> PPO Model](https://medium.com/@changjulian17/portfolio-allocation-reinforcement-learning-ppo-model-part-ii-56ecf76a941b)  [<img alt="medium articles" width="22px" src="https://raw.githubusercontent.com/iconic/open-iconic/master/svg/globe.svg" /> Assumptions](https://medium.com/@changjulian17/reinforcement-learning-ppo-in-an-investment-environment-c18b1bac29c4)  [<img alt="medium articles" width="22px" src="https://raw.githubusercontent.com/iconic/open-iconic/master/svg/globe.svg" /> Model Parameters](https://medium.com/@changjulian17/portfolio-allocation-reinforcement-learning-ppo-model-part-i-5cabd5aaaa93)   [<img alt="medium articles" width="22px" src="https://raw.githubusercontent.com/iconic/open-iconic/master/svg/globe.svg" /> Future Work](https://medium.com/@changjulian17/1e48ae290440)   
 [<img align="left" alt="website" width="22px" src="https://raw.githubusercontent.com/iconic/open-iconic/master/svg/laptop.svg" />   AI Portfolio Allocator website ](https://ai-portfolio-allocator.herokuapp.com)  
 [<img align="left" alt="medium articles" width="22px" src="https://raw.githubusercontent.com/iconic/open-iconic/master/svg/clipboard.svg" /> Tensorboard](https://tensorboard.dev/experiment/z20zIbr6TmSQ3vqUBTpkAw/#scalars)  
-[<img align="left" alt="medium articles" width="22px" src="https://raw.githubusercontent.com/iconic/open-iconic/master/svg/script.svg" />  Repository](https://github.com/changjulian17/DataSciencePortfolio/tree/main/Investment_Portfolio)  
+[<img align="left" alt="medium articles" width="22px" src="https://raw.githubusercontent.com/iconic/open-iconic/master/svg/script.svg" />  Github Repository](https://github.com/changjulian17/DataSciencePortfolio/tree/main/Investment_Portfolio)  
 
 ## Background 
 
@@ -35,9 +34,9 @@ E. Date Range
 	- Date Range 2004-12-01 to 2021-9-01  
 
 ## Development Stages
-1. Make platform for portfolio construction 
+1. **Make platform for portfolio construction**
     a.  Compile historical stock data  
-2. Feature engineering - Enrich stock prices- See notebook [`preprocessing.ipynb`](https://github.com/changjulian17/DataSciencePortfolio/blob/main/Investment_Portfolio/preprocessing.ipynb)  
+2. **Feature engineering** - Enrich stock prices- _See notebook_ [`preprocessing.ipynb`](https://github.com/changjulian17/DataSciencePortfolio/blob/main/Investment_Portfolio/preprocessing.ipynb)  
 	a. Moving Average Convergence Divergence [(MACD)](https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwiU_uHLxbz0AhUSheYKHUb7Dd8QtwJ6BAgNEAM&url=https%3A%2F%2Fwww.investopedia.com%2Fterms%2Fm%2Fmacd.asp&usg=AOvVaw2xh3SBw1WyNdcJ_481DNVi).  
 	b. Relative Strength Index [(RSI)](https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwiB1KX7xbz0AhXQ8HMBHb9QBRYQtwJ6BAgMEAM&url=https%3A%2F%2Fwww.investopedia.com%2Fterms%2Fr%2Frsi.asp&usg=AOvVaw03QeCun2Y2fpO4fA_ZaFMm)   
 	c. Commodity Channel Index [(CCI)](https://www.investopedia.com/terms/c/commoditychannelindex.asp)  
@@ -45,12 +44,12 @@ E. Date Range
 	e. 30 and 60 day Simple Moving Average [(SMA)](https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwiGyrekxrz0AhUzILcAHcssDlIQFnoECAQQAQ&url=https%3A%2F%2Fwww.investopedia.com%2Fterms%2Fs%2Fsma.asp&usg=AOvVaw31NjSKUZgU0OJnxkj6nMf3)  
 	f. [Covariance Matrix](https://www.investopedia.com/articles/financial-theory/11/calculating-covariance.asp) stock indicators  
 	g. Price Close, 30 Day SMA, 60 Day SMA deltas. Is the change in closing price, 30 Day SMA and 60 Day SMA from the previous day  
-3. Train Model - See notebook [`train.ipynb`](https://github.com/changjulian17/DataSciencePortfolio/blob/main/Investment_Portfolio/train.ipynb)   
+3. **Train Model** - _See notebook_ [`train.ipynb`](https://github.com/changjulian17/DataSciencePortfolio/blob/main/Investment_Portfolio/train.ipynb)   
 	a. Hyperparameter tuning  
-4. Backtest Model  - See notebook [`eval.ipynb`](https://github.com/changjulian17/DataSciencePortfolio/blob/main/Investment_Portfolio/eval.ipynb)  
+4. **Backtest Model**  - _See notebook_ [`eval.ipynb`](https://github.com/changjulian17/DataSciencePortfolio/blob/main/Investment_Portfolio/eval.ipynb)  
 	a. Get returns for Dragon Portfolio, Minimum Variance and Random Agent Portfolios  
 	b. Backtest all portfolios and compare performance
-5. Create webapp on Heroku - See [website](http://ai-portfolio-allocator.herokuapp.com)  
+5. **Create webapp on Heroku** - _See_ [website](http://ai-portfolio-allocator.herokuapp.com)  
 
 ## Challenges
 1. **Stationarity**  
@@ -89,11 +88,12 @@ E. Date Range
 
 ###  Files  
 .  
+├── AI_portfolio_allocator.pptx (presentation deck)  
 ├── README.md  
 ├── data  
 │ └── processed_data.pkl  (processed data output from `preprocessing.ipynb`)  
 ├── eval.ipynb  (evaluation notebook used to measure model performance and print visualisations)  
-├── modern_portfolio_theory  
+├── modern_portfolio_theory (exercise on [Modern Portfolio Theory](https://medium.com/@changjulian17/modern-portfolio-theory-with-python-f33c9f517cd4))   
 │ ├── data  
 │ │ ├── gold.xlsx  (gold data from 'LBMA Gold Price')  
 │ │ └── long-vol.xlsx  (gold data from ‘Euro hedge long-vol')  
